@@ -30,7 +30,7 @@ const Student = mongoose.model('Student', studentSchema);
 
 // Root
 app.get('/', (req, res) => {
-  res.send('✅ Student CRUD API is running!');
+  res.send('Student CRUD API is running!');
 });
 
 // Create a student
@@ -91,10 +91,10 @@ app.delete('/students/:id', async (req, res) => {
 async function startServer() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('✅ Connected to MongoDB Atlas');
-    app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+    console.log('Connected to MongoDB Atlas');
+    app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
   } catch (err) {
-    console.error('❌ Failed to connect:', err.message);
+    console.error('Failed to connect:', err.message);
   }
 }
 
